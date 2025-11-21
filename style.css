@@ -125,3 +125,55 @@
     }
 }
 
+/* Estilos para a resposta e blocos de código */
+#response-text {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* Código inline (não dentro de pre) */
+#response-text code:not(pre code) {
+    padding: 0.2rem 0.4rem;
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+/* Blocos de código específicos */
+#response-text pre {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 1rem 0;
+}
+
+#response-text pre code {
+    display: block;
+    padding: 1rem;
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    overflow-x: auto;
+    white-space: pre;
+    word-break: normal;
+    word-wrap: normal;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Garantir que a caixa de resposta não ultrapasse o container */
+#result {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+#result > div {
+    max-width: 100%;
+    overflow: hidden;
+}
+
