@@ -1,0 +1,23 @@
+{
+  "name": "projeto-alura-google",
+  "version": "1.0.0",
+  "description": "Projeto Mentor Front-End com Google Gemini - Backend seguro",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node test-server.js",
+    "diagnostico": "node diagnostico-api.js",
+    "listar-modelos": "node listar-modelos.js"
+  },
+  "keywords": ["gemini", "google", "ai", "backend"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5"
+  }
+}
+

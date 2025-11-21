@@ -1,0 +1,9 @@
+# Copie este arquivo para .env e preencha com suas credenciais
+
+# Chave da API do Google Gemini
+# Obtenha sua chave em: https://aistudio.google.com/app/apikey
+GOOGLE_API_KEY=sua_chave_api_aqui
+
+# Porta do servidor (opcional, padrão é 3000)
+PORT=3000
+

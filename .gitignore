@@ -1,0 +1,25 @@
+# Arquivo de variáveis de ambiente (NUNCA commite isso!)
+.env
+
+# Dependências
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos de documentação (exceto README.md)
+MODELO-CORRETO.md
+RESOLVER-ERRO-API.md
+INICIO-RAPIDO.md
+
