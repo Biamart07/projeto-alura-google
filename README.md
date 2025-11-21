@@ -134,7 +134,7 @@ Verifica se o servidor está funcionando.
 - **Front-end:**
   - HTML5
   - CSS3 (Tailwind CSS via CDN)
-  - JavaScript (Vanilla)
+  - JavaScript (Vanilla JS)
   - Marked.js (para renderizar Markdown)
 
 - **Backend:**
@@ -168,4 +168,3 @@ Verifica se o servidor está funcionando.
 ## 👤 Autor
 
 Desenvolvido por Beatriz Martins | Imersão Alura + Google 2025
-

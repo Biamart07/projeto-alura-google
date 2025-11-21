@@ -1,9 +1,15 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
 // Carrega variáveis de ambiente do arquivo .env
 dotenv.config();
+
+// Configura __dirname para ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -12,16 +18,12 @@ const PORT = process.env.PORT || 3000;
 app.use(cors()); // Permite requisições do front-end
 app.use(express.json()); // Permite parsing de JSON
 
-// Rota raiz para verificar se o servidor está funcionando
+// Serve arquivos estáticos (HTML, CSS, JS, assets)
+app.use(express.static(__dirname));
+
+// Rota raiz serve o index.html (front-end)
 app.get('/', (req, res) => {
-    res.json({ 
-        message: 'Backend Mentor Front-End IA está funcionando!',
-        routes: {
-            health: 'GET /health',
-            ask: 'POST /api/ask'
-        },
-        status: 'OK'
-    });
+    res.sendFile(join(__dirname, 'index.html'));
 });
 
 // Rota para fazer perguntas ao Gemini

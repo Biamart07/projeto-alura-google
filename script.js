@@ -1,6 +1,10 @@
 
-// URL do backend (ajuste conforme necessário)
-const BACKEND_URL = 'http://localhost:3000';
+// URL do backend - detecta automaticamente se está em produção ou desenvolvimento
+// No Render, o front-end e back-end estarão no mesmo domínio, então usa URL relativa
+// No desenvolvimento local, usa localhost:3000
+const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:3000'
+    : ''; // URL vazia = mesmo domínio (produção no Render)
 
 // Verifica se o servidor está rodando ao carregar a página
 async function checkServer() {
