@@ -133,6 +133,90 @@
     max-width: 100%;
 }
 
+/* Espaçamento entre elementos da resposta */
+#response-text p {
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+}
+
+#response-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Espaçamento em listas */
+#response-text ul,
+#response-text ol {
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+}
+
+#response-text li {
+    margin-bottom: 0.75rem;
+    line-height: 1.75;
+}
+
+#response-text li:last-child {
+    margin-bottom: 0;
+}
+
+/* Espaçamento em títulos dentro da resposta */
+#response-text h1,
+#response-text h2,
+#response-text h3,
+#response-text h4,
+#response-text h5,
+#response-text h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+#response-text h1:first-child,
+#response-text h2:first-child,
+#response-text h3:first-child,
+#response-text h4:first-child,
+#response-text h5:first-child,
+#response-text h6:first-child {
+    margin-top: 0;
+}
+
+/* Espaçamento em blocos de citação */
+#response-text blockquote {
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1rem;
+    border-left: 4px solid rgba(0, 229, 255, 0.3);
+}
+
+/* Espaçamento em tabelas */
+#response-text table {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#response-text table th,
+#response-text table td {
+    padding: 0.5rem;
+    border: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+/* Espaçamento em elementos HR */
+#response-text hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: none;
+    border-top: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+/* Espaçamento em parágrafos que contêm código inline */
+#response-text p code {
+    margin: 0 0.125rem;
+}
+
 /* Código inline (não dentro de pre) */
 #response-text code:not(pre code) {
     padding: 0.2rem 0.4rem;
@@ -149,7 +233,8 @@
     max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    margin: 1rem 0;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
 }
 
 #response-text pre code {
