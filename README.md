@@ -163,6 +163,7 @@ Verifica se o servidor está funcionando.
 - Este projeto foi desenvolvido como parte da Imersão Alura + Google 2025
 - A chave da API nunca deve ser exposta no código front-end
 - Para produção, considere usar variáveis de ambiente do seu provedor de hospedagem
+- As imagens utilizadas no site (fundo e favicon) foram geradas pelo Google Gemini
 
 ## 👤 Autor
 
