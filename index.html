@@ -47,10 +47,10 @@
                     placeholder="Ex: Como funciona o Grid Layout no CSS?"></textarea>
 
                 <div class="flex justify-end mt-4">
-                    <button onclick="askGemini()"
+                    <button type="button" onclick="askGemini()" aria-label="Enviar pergunta ao mentor de Front-End"
                         class="bg-[#00E5FF] hover:bg-[#0072FF] text-[#004D57] hover:text-white font-bold font-titulo py-3 px-6 rounded-lg transition flex items-center gap-2">
                         <span>Perguntar</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" aria-hidden="true" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -59,7 +59,7 @@
                 </div>
             </div>
 
-            <div id="loading" class="hidden mt-8">
+            <div id="loading" class="hidden mt-8" aria-live="polite" aria-busy="true" role="status" aria-label="Processando resposta">
                 <div class="loading-container">
                     <!-- A pista (linha horizontal) -->
                     <div class="data-track">
@@ -76,9 +76,9 @@
                 </div>
             </div>
 
-            <div id="result" class="mt-8 hidden">
+            <div id="result" class="mt-8 hidden" aria-live="polite" role="region" aria-labelledby="response-title">
                 <div class="bg-[rgba(30,41,59,0.5)] p-6 rounded-xl border border-slate-700 shadow-lg">
-                    <h2 class="text-xl font-semibold text-cyan-400 mb-4 font-titulo">Resposta:</h2>
+                    <h2 id="response-title" class="text-xl font-semibold text-cyan-400 mb-4 font-titulo" tabindex="-1">Resposta:</h2>
                     <div id="response-text" class="prose prose-invert max-w-none text-slate-300 leading-relaxed">
                     </div>
                 </div>

@@ -20,10 +20,10 @@ async function checkServer() {
 // Verifica a conexão ao carregar a página
 window.addEventListener('DOMContentLoaded', () => {
     checkServer();
-    
+
     // Adiciona evento para enviar com Enter
     const questionInput = document.getElementById('question');
-    
+
     if (questionInput) {
         questionInput.addEventListener('keydown', (event) => {
             // Se pressionar Enter sem Shift, envia a pergunta
@@ -51,14 +51,15 @@ async function askGemini() {
 
     // UI: Mostrar loading e esconder resultado anterior
     loading.classList.remove('hidden');
+    loading.setAttribute('aria-busy', 'true');
     resultDiv.classList.add('hidden');
 
     try {
         // Faz requisição para o backend seguro
         const response = await fetch(`${BACKEND_URL}/api/ask`, {
             method: "POST",
-            headers: { 
-                "Content-Type": "application/json" 
+            headers: {
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({ question: prompt })
         });
@@ -79,10 +80,20 @@ async function askGemini() {
         // UI: Mostrar resultado
         resultDiv.classList.remove('hidden');
 
+        // Acessibilidade: Focar no título da resposta após renderização
+        // Usa setTimeout para garantir que o elemento está visível e renderizado
+        setTimeout(() => {
+            const responseTitle = document.getElementById('response-title');
+            if (responseTitle) {
+                responseTitle.focus();
+                // Scroll suave até a resposta para garantir que está visível
+                responseTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 100);
     } catch (error) {
         console.error("Erro:", error);
         let errorMessage = 'Ocorreu um erro ao buscar a resposta.';
-        
+
         // Mensagens de erro mais específicas
         if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
             errorMessage = `
@@ -94,10 +105,11 @@ async function askGemini() {
         } else {
             errorMessage = `<p class='text-red-400'>${error.message || errorMessage}</p>`;
         }
-        
+
         responseText.innerHTML = errorMessage;
         resultDiv.classList.remove('hidden');
     } finally {
         loading.classList.add('hidden');
+        loading.setAttribute('aria-busy', 'false');
     }
 }

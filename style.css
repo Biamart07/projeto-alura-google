@@ -262,3 +262,19 @@
     overflow: hidden;
 }
 
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .loader,
+    .data-packet,
+    .loading-text {
+        animation: none !important;
+    }
+
+    .data-packet {
+        display: none; /* Hide the moving packets */
+    }
+
+    .prompt-box {
+        transition: none;
+    }
+}
