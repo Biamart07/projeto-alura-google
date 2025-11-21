@@ -20,6 +20,20 @@ async function checkServer() {
 // Verifica a conexão ao carregar a página
 window.addEventListener('DOMContentLoaded', () => {
     checkServer();
+    
+    // Adiciona evento para enviar com Enter
+    const questionInput = document.getElementById('question');
+    
+    if (questionInput) {
+        questionInput.addEventListener('keydown', (event) => {
+            // Se pressionar Enter sem Shift, envia a pergunta
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault(); // Previne quebra de linha
+                askGemini();
+            }
+            // Shift+Enter permite quebrar linha normalmente
+        });
+    }
 });
 
 async function askGemini() {
